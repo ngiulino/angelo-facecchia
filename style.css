@@ -64,6 +64,12 @@ a:hover{
   font-size: 14px;
 }
 
+.hero__tagline{
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .scan{
   margin-top: 18px;
   padding: 16px 16px 14px;
