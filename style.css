@@ -7,12 +7,10 @@
   --muted: #9aa6b2;
   --line: rgba(230,237,243,0.16);
 
-  /* Fluorescent blue */
-  --accent: #38BDF8; /* sky-400 */
+  /* Fluorescent blue accent */
+  --accent: #38BDF8;
   --accent-soft: rgba(56,189,248,0.22);
   --accent-border: rgba(56,189,248,0.25);
-  --accent-hover: rgba(56,189,248,0.12);
-  --accent-border-hover: rgba(56,189,248,0.45);
 
   /* Pills */
   --pill-bg: rgba(230,237,243,0.07);
@@ -57,20 +55,20 @@ h1{
 }
 
 h2{
-  margin: 0 0 18px;
+  margin: 0 0 14px;
   font-size: 18px;
   font-weight: 420;
   color: var(--muted);
 }
 
 .tagline{
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-size: 16px;
   color: rgba(230,237,243,0.92);
 }
 
 .meta{
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   font-size: 14px;
   color: var(--muted);
 }
@@ -89,7 +87,7 @@ a:hover{
 }
 
 /* =========================================================
-   Sections / dividers
+   Dividers
    ========================================================= */
 hr{
   border: 0;
@@ -97,15 +95,15 @@ hr{
   margin: 28px 0;
 }
 
-/* Banner header like screenshot (but fluorescent blue) */
+/* =========================================================
+   Section banner (fluorescent blue)
+   ========================================================= */
 .section-banner{
   position: relative;
   padding: 22px 22px 22px 28px;
   border-radius: 14px;
-
   background: linear-gradient(90deg, var(--accent-soft), rgba(255,255,255,0.02));
   border: 1px solid var(--accent-border);
-
   margin: 34px 0 18px;
 }
 
@@ -128,7 +126,7 @@ hr{
 }
 
 /* =========================================================
-   Overview list
+   Lists
    ========================================================= */
 ul{
   margin: 10px 0 0;
@@ -173,7 +171,7 @@ li{ margin: 7px 0; }
   transform: translateY(-1px);
 }
 
-/* Icon for buttons */
+/* Button icons (PDF, LinkedIn, GitHub) */
 .icon{
   width: 18px;
   height: 18px;
@@ -208,8 +206,8 @@ li{ margin: 7px 0; }
 }
 
 .chip:hover{
-  border-color: var(--accent-border-hover);
-  background: var(--accent-hover);
+  border-color: rgba(56,189,248,0.45);
+  background: rgba(56,189,248,0.12);
 }
 
 /* =========================================================
@@ -241,6 +239,34 @@ li{ margin: 7px 0; }
 }
 
 /* =========================================================
+   Education (minimal)
+   ========================================================= */
+.edu-line{
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: rgba(230,237,243,0.92);
+}
+
+.edu-line strong{
+  font-weight: 680;
+  color: var(--text);
+}
+
+/* =========================================================
+   Certifications (ultra-ATS minimal)
+   ========================================================= */
+.cert-line{
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.cert-line strong{
+  color: rgba(230,237,243,0.92);
+  font-weight: 600;
+}
+
+/* =========================================================
    Footer
    ========================================================= */
 .footer{
@@ -254,13 +280,120 @@ li{ margin: 7px 0; }
    ========================================================= */
 @media (max-width: 520px){
   .page{ padding: 36px 16px 64px; }
-
   h1{ font-size: 32px; }
   h2{ font-size: 16px; }
-
   .section-banner h3{ font-size: 28px; }
-
   .role-dates{ white-space: normal; }
-
   .chip{ font-size: 14px; padding: 10px 14px; }
+}
+
+/* =========================================================
+   Micro print view (Save as PDF)
+   ========================================================= */
+@media print{
+  :root{
+    --bg: #ffffff;
+    --text: #0b0f14;
+    --muted: #374151;
+    --line: #d1d5db;
+    --accent: #0ea5e9;
+    --accent-soft: #f3f4f6;
+    --accent-border: #d1d5db;
+    --pill-bg: #ffffff;
+    --pill-border: #d1d5db;
+  }
+
+  body{
+    background: #ffffff !important;
+    color: #0b0f14 !important;
+    letter-spacing: 0;
+  }
+
+  .page{
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Keep content compact */
+  h1{ font-size: 26px; }
+  h2{ font-size: 14px; margin-bottom: 10px; }
+  .tagline{ font-size: 12px; margin-bottom: 10px; }
+  .meta{ font-size: 11px; margin-bottom: 10px; }
+
+  ul{ font-size: 12px; }
+  li{ margin: 5px 0; }
+
+  hr{ margin: 16px 0; border-top: 1px solid #d1d5db; }
+
+  .section-banner{
+    margin: 18px 0 10px;
+    border-radius: 10px;
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 12px 12px 12px 16px;
+  }
+
+  .section-banner::before{
+    background: #0ea5e9;
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+  }
+
+  .section-banner h3{
+    font-size: 16px;
+    font-weight: 750;
+  }
+
+  /* Avoid chip clutter in print • convert to plain text feel */
+  .chips{
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .chip{
+    padding: 6px 10px;
+    font-size: 11px;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #0b0f14;
+  }
+
+  /* Buttons become simple links in print */
+  .actions{
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .btn{
+    padding: 0;
+    border: 0;
+    background: transparent;
+    transform: none !important;
+  }
+
+  .btn:hover{
+    transform: none !important;
+  }
+
+  .icon{
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Ensure links show as text (print) */
+  a{
+    color: #0b0f14;
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  /* Prevent awkward page breaks inside roles */
+  .role{
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Hide footer year script effect is fine */
 }
