@@ -1,20 +1,28 @@
 /* =========================================================
-   Base variables
+   Theme
    ========================================================= */
 :root{
   --bg: #0b0f14;
   --text: #e6edf3;
   --muted: #9aa6b2;
-  --line: rgba(230,237,243,0.18);
+  --line: rgba(230,237,243,0.16);
 
-  --btn-bg: rgba(230,237,243,0.07);
-  --btn-bg-hover: rgba(230,237,243,0.12);
-  --btn-border: rgba(230,237,243,0.22);
-  --btn-border-hover: rgba(230,237,243,0.32);
+  /* Fluorescent blue */
+  --accent: #38BDF8; /* sky-400 */
+  --accent-soft: rgba(56,189,248,0.22);
+  --accent-border: rgba(56,189,248,0.25);
+  --accent-hover: rgba(56,189,248,0.12);
+  --accent-border-hover: rgba(56,189,248,0.45);
+
+  /* Pills */
+  --pill-bg: rgba(230,237,243,0.07);
+  --pill-bg-hover: rgba(230,237,243,0.12);
+  --pill-border: rgba(230,237,243,0.22);
+  --pill-border-hover: rgba(230,237,243,0.32);
 }
 
 /* =========================================================
-   Reset & base
+   Reset / base
    ========================================================= */
 *{ box-sizing: border-box; }
 
@@ -24,18 +32,47 @@ body{
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI,
-               Roboto, Helvetica, Arial;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   line-height: 1.55;
+  letter-spacing: 0.1px;
 }
 
 /* =========================================================
    Layout
    ========================================================= */
 .page{
-  max-width: 820px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 42px 18px 64px;
+  padding: 48px 18px 72px;
+}
+
+/* =========================================================
+   Typography
+   ========================================================= */
+h1{
+  margin: 0 0 6px;
+  font-size: 44px;
+  font-weight: 780;
+  letter-spacing: 0.2px;
+}
+
+h2{
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: 420;
+  color: var(--muted);
+}
+
+.tagline{
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: rgba(230,237,243,0.92);
+}
+
+.meta{
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* =========================================================
@@ -52,45 +89,49 @@ a:hover{
 }
 
 /* =========================================================
-   Headings & text
+   Sections / dividers
    ========================================================= */
-h1{
-  margin: 0 0 4px;
-  font-size: 40px;
-  font-weight: 750;
+hr{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 28px 0;
 }
 
-h2{
-  margin: 0 0 10px;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--muted);
+/* Banner header like screenshot (but fluorescent blue) */
+.section-banner{
+  position: relative;
+  padding: 22px 22px 22px 28px;
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, var(--accent-soft), rgba(255,255,255,0.02));
+  border: 1px solid var(--accent-border);
+
+  margin: 34px 0 18px;
 }
 
-.tagline{
-  margin: 0 0 18px;
-  font-size: 15px;
+.section-banner::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 6px;
+  border-radius: 10px;
+  background: var(--accent);
 }
 
-.meta{
-  margin: 0 0 18px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.section-title{
-  margin: 22px 0 10px;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  color: var(--muted);
+.section-banner h3{
+  margin: 0;
+  font-size: 38px;
+  font-weight: 780;
+  letter-spacing: 0.2px;
 }
 
 /* =========================================================
-   Lists
+   Overview list
    ========================================================= */
 ul{
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   padding-left: 18px;
   font-size: 15px;
 }
@@ -98,59 +139,7 @@ ul{
 li{ margin: 7px 0; }
 
 /* =========================================================
-   Divider
-   ========================================================= */
-hr{
-  border: 0;
-  border-top: 1px solid var(--line);
-  margin: 26px 0;
-}
-
-/* =========================================================
-   Roles
-   ========================================================= */
-.role{ margin-bottom: 18px; }
-
-.role-head{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 6px;
-  font-size: 14px;
-}
-
-.role-company{
-  margin: 0;
-  font-weight: 650;
-}
-
-.role-dates{
-  margin: 0;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-/* =========================================================
-   Tooling
-   ========================================================= */
-.tooling{
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.tooling li{ margin: 6px 0; }
-
-.tooling .k{
-  display: inline-block;
-  min-width: 140px;
-  color: var(--muted);
-}
-
-/* =========================================================
-   Actions / buttons (ALL PILL)
+   Actions / pill buttons
    ========================================================= */
 .actions{
   display: flex;
@@ -167,28 +156,24 @@ hr{
   padding: 11px 22px;
   border-radius: 999px;
 
-  background: var(--btn-bg);
-  border: 1px solid var(--btn-border);
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
 
   color: var(--text);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 520;
 
   border-bottom: none;
-  transition: background 120ms ease,
-              border-color 120ms ease,
-              transform 120ms ease;
+  transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
 }
 
 .btn:hover{
-  background: var(--btn-bg-hover);
-  border-color: var(--btn-border-hover);
+  background: var(--pill-bg-hover);
+  border-color: var(--pill-border-hover);
   transform: translateY(-1px);
 }
 
-/* =========================================================
-   Icons (PDF, LinkedIn, GitHub)
-   ========================================================= */
+/* Icon for buttons */
 .icon{
   width: 18px;
   height: 18px;
@@ -196,15 +181,70 @@ hr{
   flex-shrink: 0;
 }
 
-.btn:hover .icon{
-  opacity: 0.95;
+.btn:hover .icon{ opacity: 0.95; }
+
+/* =========================================================
+   Skill chips
+   ========================================================= */
+.chips{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 16px 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(230,237,243,0.06);
+  border: 1px solid rgba(230,237,243,0.18);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 520;
+}
+
+.chip:hover{
+  border-color: var(--accent-border-hover);
+  background: var(--accent-hover);
+}
+
+/* =========================================================
+   Work experience blocks
+   ========================================================= */
+.role{
+  margin-bottom: 22px;
+}
+
+.role-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.role-company{
+  margin: 0;
+  font-weight: 680;
+}
+
+.role-dates{
+  margin: 0;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 /* =========================================================
    Footer
    ========================================================= */
 .footer{
-  margin-top: 34px;
+  margin-top: 42px;
   font-size: 12px;
   color: var(--muted);
 }
@@ -213,7 +253,14 @@ hr{
    Responsive
    ========================================================= */
 @media (max-width: 520px){
-  h1{ font-size: 30px; }
+  .page{ padding: 36px 16px 64px; }
+
+  h1{ font-size: 32px; }
+  h2{ font-size: 16px; }
+
+  .section-banner h3{ font-size: 28px; }
+
   .role-dates{ white-space: normal; }
-  .tooling .k{ min-width: 120px; }
+
+  .chip{ font-size: 14px; padding: 10px 14px; }
 }
