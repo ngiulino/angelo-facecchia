@@ -2,58 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Angelo Facecchia - Senior Software QA Engineer - Portfolio" />
-  <title>Angelo Facecchia - Senior Software QA Engineer - Mobile, Web, Backend</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="stylesheet" href="./style.css" />
+  <title>Angelo Facecchia - Senior QA Engineer [Mobile, Web, Backend]</title>
+  <meta name="description" content="Angelo Facecchia - Senior Software Quality Assurance Engineer [Mobile, Web, Backend] - Tallinn, Estonia" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --text:#e6edf3;
+      --muted:#9aa6b2;
+      --line:rgba(230,237,243,0.18);
+      --link:#c9d1d9;
+      --linkHover:#ffffff;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.55;
+      letter-spacing:0.1px;
+    }
+
+    .page{
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 42px 18px 64px;
+    }
+
+    a{
+      color: var(--link);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+    }
+    a:hover{
+      color: var(--linkHover);
+      border-bottom-color: rgba(255,255,255,0.35);
+    }
+
+    h1{
+      margin:0 0 4px;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    h2{
+      margin:0 0 12px;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .meta{
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .scan{
+      margin: 14px 0 4px;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+    .scan li{ margin: 6px 0; }
+
+    hr{
+      border:0;
+      border-top: 1px solid var(--line);
+      margin: 26px 0;
+    }
+
+    .section-title{
+      margin: 0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--muted);
+    }
+
+    .role{
+      margin: 0 0 18px;
+    }
+
+    .role-head{
+      display:flex;
+      gap: 10px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0 0 6px;
+      font-size: 14px;
+    }
+
+    .role-company{
+      margin:0;
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .role-dates{
+      margin:0;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    ul{
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+    li{ margin: 6px 0; }
+
+    .download{
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .footer{
+      margin-top: 34px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 520px){
+      h1{ font-size: 28px; }
+      .role-dates{ white-space: normal; }
+    }
+  </style>
 </head>
 
 <body>
   <main class="page">
-    <header class="hero">
-      <div class="hero__top">
-        <h1 class="hero__name">Angelo Facecchia</h1>
-        <p class="hero__role">Senior Software Quality Assurance Engineer</p>
-        <p class="hero__tagline"> Mobile - Web - Backend - Risk - Based Quality - Release Readiness</p>
-        <p class="hero__meta">
-          Tallinn, Estonia - <a href="mailto:facecchiangelo@gmail.com">facecchiangelo@gmail.com</a>
-          - <a href="https://linkedin.com/in/angelofacecchia" target="_blank" rel="noreferrer">LinkedIn</a>
-          - <a href="https://github.com/ngiulino" target="_blank" rel="noreferrer">GitHub</a>
-        </p>
-      </div>
 
-      <section class="scan" aria-label="30 second scan">
-        <h2 class="section__title">Overview</h2>
-        <ul class="scan__list">
-          <li>15+ years in Quality Assurance across mobile, web, and backend systems in product environments.</li>
-          <li>Strong in manual testing, exploratory testing, regression, and risk-based release validation.</li>
-          <li>Hands-on with revenue-critical flows, authentication, subscriptions, payments, core user journeys.</li>
-          <li>Agile delivery experience, cross-functional collaboration with Product, Design, and Engineering.</li>
-          <li>Comfortable with logs and databases for investigation, clear defect reporting and triage.</li>
-        </ul>
+    <h1>Angelo Facecchia</h1>
+    <h2>Senior Software Quality Assurance Engineer</h2>
 
-        <div class="cta">
-          <a class="btn btn--primary" href="assets/CV_AngeloFacecchia.pdf" download>Download CV (PDF)</a>
-          <a class="btn" href="https://linkedin.com/in/angelofacecchia" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/ngiulino" target="_blank" rel="noreferrer">GitHub</a>
+    <p class="meta">
+      Tallinn, Estonia -
+      <a href="mailto:facecchiangelo@gmail.com">facecchiangelo@gmail.com</a> -
+      <a href="https://linkedin.com/in/angelofacecchia" target="_blank" rel="noreferrer">LinkedIn</a> -
+      <a href="https://github.com/ngiulino" target="_blank" rel="noreferrer">GitHub</a> -
+      <a href="assets/CV_AngeloFacecchia.pdf" target="_blank" rel="noreferrer">CV (PDF)</a>
+    </p>
+
+    <ul class="scan">
+      <li>15+ years in Quality Assurance across mobile, web, and backend systems in product environments.</li>
+      <li>Strength in manual testing, exploratory testing, regression, and risk-based release validation.</li>
+      <li>Hands-on with revenue-critical flows, authentication, subscriptions, payments, core user journeys.</li>
+      <li>Agile delivery experience, cross-functional collaboration with Product, Design, and Engineering.</li>
+      <li>Comfortable with logs and databases for investigation, clear defect reporting and triage.</li>
+    </ul>
+
+    <hr />
+
+    <section>
+      <h3 class="section-title">Senior Software QA Engineer</h3>
+
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Speakly OÜ – Tallinn, Estonia</p>
+          <p class="role-dates">October 2025 – January 2026</p>
         </div>
-
-      </section>
-    </header>
-
-    <hr class="divider" />
-
-    <section class="block">
-      <h2 class="section__title">Senior Software QA Engineer</h2>
-
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">Speakly OÜ - Tallinn, Estonia</h3>
-          <p class="role__dates">October 2025 - January 2026</p>
-        </header>
-
-        <ul class="role__bullets">
+        <ul>
           <li>Owned end-to-end QA activities for mobile (iOS, Android), web, and backend systems.</li>
           <li>Defined and implemented QA processes, including release sanity checklists and bug reporting standards.</li>
           <li>Validated critical user and revenue-impacting flows such as authentication, subscriptions, payments, and core learning functionality.</li>
@@ -61,21 +176,20 @@
           <li>Collaborated closely with Product Managers, Designers, and Engineering teams to clarify requirements and assess production risk.</li>
           <li>Created QA documentation and handover materials to support future QA team scaling.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
-    <hr class="divider" />
+    <hr />
 
-    <section class="block">
-      <h2 class="section__title">Senior QA Specialist / Product Manager</h2>
+    <section>
+      <h3 class="section-title">Senior QA Specialist / Product Manager</h3>
 
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">Podium North OÜ - Tallinn, Estonia</h3>
-          <p class="role__dates">October 2022 - September 2025</p>
-        </header>
-
-        <ul class="role__bullets">
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Podium North OÜ – Tallinn, Estonia</p>
+          <p class="role-dates">October 2022 – September 2025</p>
+        </div>
+        <ul>
           <li>Led QA activities across multiple projects involving several development teams.</li>
           <li>Defined and enforced QA processes and quality standards across mobile platforms.</li>
           <li>Executed compatibility testing across iOS and Android devices, browsers, and screen sizes.</li>
@@ -85,21 +199,20 @@
           <li>Contributed to early-stage product definition including user journeys, content structure, and monetisation strategy.</li>
           <li>Managed and prioritised product backlogs and collaborated with stakeholders to refine requirements.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
-    <hr class="divider" />
+    <hr />
 
-    <section class="block">
-      <h2 class="section__title">Senior Mobile QA Engineer</h2>
+    <section>
+      <h3 class="section-title">Senior Mobile QA Engineer</h3>
 
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">Bolt OÜ - Tallinn, Estonia</h3>
-          <p class="role__dates">September 2020 - September 2022</p>
-        </header>
-
-        <ul class="role__bullets">
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Bolt OÜ – Tallinn, Estonia</p>
+          <p class="role-dates">September 2020 – September 2022</p>
+        </div>
+        <ul>
           <li>Designed and executed manual test scenarios and test suites for iOS and Android applications.</li>
           <li>Performed smoke, functional, regression, system, integration, and exploratory testing.</li>
           <li>Conducted functional API testing to validate backend integrations.</li>
@@ -109,34 +222,34 @@
           <li>Supported full defect lifecycle from discovery to resolution and verification.</li>
           <li>Identified opportunities for test automation in collaboration with engineering teams.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
-    <hr class="divider" />
+    <hr />
 
-    <section class="block">
-      <h2 class="section__title">Additional Experience</h2>
+    <section>
+      <h3 class="section-title">Additional Experience</h3>
 
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">BetPawa - Tallinn, Estonia</h3>
-          <p class="role__dates">May 2019 - September 2020</p>
-        </header>
-        <ul class="role__bullets">
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">BetPawa – Tallinn, Estonia</p>
+          <p class="role-dates">May 2019 – September 2020</p>
+        </div>
+        <ul>
           <li>Executed manual smoke, functional, regression, system, integration, and exploratory testing.</li>
           <li>Tested mobile applications across iOS and Android platforms.</li>
           <li>Performed cross-browser and cross-device compatibility testing.</li>
           <li>Analysed technical issues using logs and database queries.</li>
           <li>Created detailed defect reports to support efficient bug fixing.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">Cloudmore OÜ - Tallinn, Estonia</h3>
-          <p class="role__dates">March 2018 - May 2019</p>
-        </header>
-        <ul class="role__bullets">
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Cloudmore OÜ – Tallinn, Estonia</p>
+          <p class="role-dates">March 2018 – May 2019</p>
+        </div>
+        <ul>
           <li>Defined and maintained test strategies and test plans in Agile environments.</li>
           <li>Created acceptance criteria in collaboration with Product and Development during sprint planning.</li>
           <li>Designed and executed test cases aligned with user stories and business requirements.</li>
@@ -144,36 +257,43 @@
           <li>Reported test execution results to management.</li>
           <li>Participated in interviewing and evaluating QA candidates.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="role">
-        <header class="role__header">
-          <h3 class="role__company">Kühne + Nagel - Tallinn, Estonia</h3>
-          <p class="role__dates">January 2014 - February 2018</p>
-        </header>
-        <ul class="role__bullets">
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Kühne + Nagel – Tallinn, Estonia</p>
+          <p class="role-dates">January 2014 – February 2018</p>
+        </div>
+        <ul>
           <li>Developed and executed test cases based on business and technical requirements.</li>
           <li>Analysed system issues using server logs, databases, and message validation tools.</li>
           <li>Produced detailed defect reports and test execution summaries.</li>
           <li>Supported user acceptance testing and assisted developers during bug fixing.</li>
         </ul>
-      </article>
+      </div>
 
-      <article class="role role--compact">
-        <header class="role__header">
-          <h3 class="role__company">Earlier Roles - Estonia and Italy</h3>
-          <p class="role__dates">2007 - 2013</p>
-        </header>
-        <ul class="role__bullets">
-          <li>Software Quality Control - SATPROF B.V - DeltaTre S.p.A - HRM / GlaxoSmithKline.</li>
-          <li>Functional, performance, and load testing, authentication and authorisation, media playback validation, acceptance testing support.</li>
+      <div class="role">
+        <div class="role-head">
+          <p class="role-company">Earlier Roles – Estonia and Italy</p>
+          <p class="role-dates">2007 – 2013</p>
+        </div>
+        <ul>
+          <li>Software Quality Control • SATPROF B.V • DeltaTre S.p.A • HRM / GlaxoSmithKline.</li>
+          <li>Functional, performance, and load testing • authentication and authorisation • media playback validation • acceptance testing support.</li>
         </ul>
-      </article>
+      </div>
     </section>
 
-    <footer class="footer">
-      <p>© <span id="year"></span> Angelo Facecchia - Built on GitHub Pages</p>
-    </footer>
+    <hr />
+
+    <p class="download">
+      Download • <a href="assets/CV_AngeloFacecchia.pdf">CV_AngeloFacecchia.pdf</a>
+    </p>
+
+    <p class="footer">
+      © <span id="year"></span> Angelo Facecchia
+    </p>
+
   </main>
 
   <script>
