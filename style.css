@@ -7,22 +7,18 @@
   --muted: #9aa6b2;
   --line: rgba(230,237,243,0.18);
 
-  --btn-bg: rgba(230,237,243,0.06);
-  --btn-bg-hover: rgba(230,237,243,0.10);
-  --btn-border: rgba(230,237,243,0.18);
-  --btn-border-hover: rgba(230,237,243,0.28);
+  --btn-bg: rgba(230,237,243,0.07);
+  --btn-bg-hover: rgba(230,237,243,0.12);
+  --btn-border: rgba(230,237,243,0.22);
+  --btn-border-hover: rgba(230,237,243,0.32);
 }
 
 /* =========================================================
    Reset & base
    ========================================================= */
-*{
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
-html, body{
-  height: 100%;
-}
+html, body{ height: 100%; }
 
 body{
   margin: 0;
@@ -31,7 +27,6 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI,
                Roboto, Helvetica, Arial;
   line-height: 1.55;
-  letter-spacing: 0.1px;
 }
 
 /* =========================================================
@@ -63,7 +58,6 @@ h1{
   margin: 0 0 4px;
   font-size: 40px;
   font-weight: 750;
-  letter-spacing: 0.2px;
 }
 
 h2{
@@ -76,7 +70,6 @@ h2{
 .tagline{
   margin: 0 0 18px;
   font-size: 15px;
-  opacity: 0.95;
 }
 
 .meta{
@@ -102,9 +95,7 @@ ul{
   font-size: 15px;
 }
 
-li{
-  margin: 7px 0;
-}
+li{ margin: 7px 0; }
 
 /* =========================================================
    Divider
@@ -116,11 +107,9 @@ hr{
 }
 
 /* =========================================================
-   Roles / experience
+   Roles
    ========================================================= */
-.role{
-  margin-bottom: 18px;
-}
+.role{ margin-bottom: 18px; }
 
 .role-head{
   display: flex;
@@ -143,7 +132,7 @@ hr{
 }
 
 /* =========================================================
-   Tooling (ATS-friendly)
+   Tooling
    ========================================================= */
 .tooling{
   list-style: none;
@@ -152,9 +141,7 @@ hr{
   font-size: 14px;
 }
 
-.tooling li{
-  margin: 6px 0;
-}
+.tooling li{ margin: 6px 0; }
 
 .tooling .k{
   display: inline-block;
@@ -163,25 +150,30 @@ hr{
 }
 
 /* =========================================================
-   Actions / buttons
+   Actions / buttons (ALL PILL)
    ========================================================= */
 .actions{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 18px;
 }
 
 .btn{
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 12px;
+  gap: 10px;
+
+  padding: 11px 22px;
+  border-radius: 999px;
+
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
+
   color: var(--text);
   font-size: 14px;
+  font-weight: 500;
+
   border-bottom: none;
   transition: background 120ms ease,
               border-color 120ms ease,
@@ -195,34 +187,13 @@ hr{
 }
 
 /* =========================================================
-   Primary CV pill button
-   ========================================================= */
-.btn--pill{
-  border-radius: 999px;
-  padding: 11px 20px;
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.22);
-  font-weight: 500;
-}
-
-.btn--pill:hover{
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.32);
-}
-
-/* =========================================================
-   Icons (LinkedIn, GitHub, PDF)
+   Icons (PDF, LinkedIn, GitHub)
    ========================================================= */
 .icon{
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
-
-.btn--pill .icon{
   width: 18px;
   height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .btn:hover .icon{
@@ -242,15 +213,7 @@ hr{
    Responsive
    ========================================================= */
 @media (max-width: 520px){
-  h1{
-    font-size: 30px;
-  }
-
-  .role-dates{
-    white-space: normal;
-  }
-
-  .tooling .k{
-    min-width: 120px;
-  }
+  h1{ font-size: 30px; }
+  .role-dates{ white-space: normal; }
+  .tooling .k{ min-width: 120px; }
 }
