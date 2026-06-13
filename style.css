@@ -1,33 +1,22 @@
-/* =========================================================
-   Theme
-   ========================================================= */
-:root{
+:root {
   --bg: #0b0f14;
   --text: #e6edf3;
   --muted: #9aa6b2;
   --line: rgba(230,237,243,0.16);
-
-  /* Fluorescent blue accent */
   --accent: #38BDF8;
   --accent-soft: rgba(56,189,248,0.22);
   --accent-border: rgba(56,189,248,0.25);
-
-  /* Pills */
   --pill-bg: rgba(230,237,243,0.07);
   --pill-bg-hover: rgba(230,237,243,0.12);
   --pill-border: rgba(230,237,243,0.22);
   --pill-border-hover: rgba(230,237,243,0.32);
+  --sidebar-width: 260px;
 }
 
-/* =========================================================
-   Reset / base
-   ========================================================= */
-*{ box-sizing: border-box; }
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
 
-html, body{ height: 100%; }
-
-body{
-  margin: 0;
+body {
   background: var(--bg);
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -35,70 +24,121 @@ body{
   letter-spacing: 0.1px;
 }
 
-/* =========================================================
-   Layout
-   ========================================================= */
-.page{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 48px 18px 72px;
+.layout { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background: rgba(255,255,255,0.03);
+  border-right: 1px solid var(--line);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
-/* =========================================================
-   Typography
-   ========================================================= */
-h1{
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.sidebar-name {
   margin: 0 0 6px;
-  font-size: 44px;
-  font-weight: 780;
-  letter-spacing: 0.2px;
-}
-
-h2{
-  margin: 0 0 14px;
   font-size: 18px;
-  font-weight: 420;
-  color: var(--muted);
-}
-
-.tagline{
-  margin: 0 0 14px;
-  font-size: 16px;
-  color: rgba(230,237,243,0.92);
-}
-
-.meta{
-  margin: 0 0 16px;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-/* =========================================================
-   Links
-   ========================================================= */
-a{
+  font-weight: 720;
+  text-align: center;
   color: var(--text);
+}
+
+.sidebar-role {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.sidebar-location {
+  margin: 0 0 24px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.sidebar-links a {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: var(--accent);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-soft);
+  transition: background 120ms ease;
 }
 
-a:hover{
-  border-bottom-color: rgba(255,255,255,0.35);
-}
+.sidebar-links a:hover { background: rgba(56,189,248,0.32); }
 
-/* =========================================================
-   Dividers
-   ========================================================= */
-hr{
-  border: 0;
+.sidebar-nav {
+  width: 100%;
   border-top: 1px solid var(--line);
-  margin: 28px 0;
+  padding-top: 20px;
 }
 
-/* =========================================================
-   Section banner (fluorescent blue)
-   ========================================================= */
-.section-banner{
+.sidebar-nav-title {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.sidebar-nav a {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 7px 0;
+  border-bottom: none;
+  transition: color 120ms ease;
+}
+
+.sidebar-nav a:hover { color: var(--accent); }
+
+.content {
+  flex: 1;
+  padding: 48px 48px 72px;
+  max-width: 860px;
+}
+
+h1 { margin: 0 0 6px; font-size: 44px; font-weight: 780; letter-spacing: 0.2px; }
+h2 { margin: 0 0 14px; font-size: 18px; font-weight: 420; color: var(--muted); }
+.tagline { margin: 0 0 14px; font-size: 16px; color: rgba(230,237,243,0.92); }
+.meta { margin: 0 0 16px; font-size: 14px; color: var(--muted); }
+
+a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { border-bottom-color: rgba(255,255,255,0.35); }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
+
+.section-banner {
   position: relative;
   padding: 22px 22px 22px 28px;
   border-radius: 14px;
@@ -107,93 +147,43 @@ hr{
   margin: 34px 0 18px;
 }
 
-.section-banner::before{
+.section-banner::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 14px;
-  bottom: 14px;
+  left: 0; top: 14px; bottom: 14px;
   width: 6px;
   border-radius: 10px;
   background: var(--accent);
 }
 
-.section-banner h3{
-  margin: 0;
-  font-size: 38px;
-  font-weight: 780;
-  letter-spacing: 0.2px;
-}
+.section-banner h3 { margin: 0; font-size: 38px; font-weight: 780; letter-spacing: 0.2px; }
 
-/* =========================================================
-   Lists
-   ========================================================= */
-ul{
-  margin: 10px 0 0;
-  padding-left: 18px;
-  font-size: 15px;
-}
+ul { margin: 10px 0 0; padding-left: 18px; font-size: 15px; }
+li { margin: 7px 0; }
 
-li{ margin: 7px 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
 
-/* =========================================================
-   Actions / pill buttons
-   ========================================================= */
-.actions{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.btn{
+.btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
   padding: 11px 22px;
   border-radius: 999px;
-
   background: var(--pill-bg);
   border: 1px solid var(--pill-border);
-
   color: var(--text);
   font-size: 14px;
   font-weight: 520;
-
   border-bottom: none;
   transition: background 120ms ease, border-color 120ms ease, transform 120ms ease;
 }
 
-.btn:hover{
-  background: var(--pill-bg-hover);
-  border-color: var(--pill-border-hover);
-  transform: translateY(-1px);
-}
+.btn:hover { background: var(--pill-bg-hover); border-color: var(--pill-border-hover); transform: translateY(-1px); }
+.icon { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
 
-/* Button icons (PDF, LinkedIn, GitHub) */
-.icon{
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  flex-shrink: 0;
-}
+.chips { display: flex; flex-wrap: wrap; gap: 14px; margin: 16px 0 6px; padding: 0; list-style: none; }
 
-.btn:hover .icon{ opacity: 0.95; }
-
-/* =========================================================
-   Skill chips
-   ========================================================= */
-.chips{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin: 16px 0 6px;
-  padding: 0;
-  list-style: none;
-}
-
-.chip{
+.chip {
   display: inline-flex;
   align-items: center;
   padding: 12px 18px;
@@ -205,19 +195,11 @@ li{ margin: 7px 0; }
   font-weight: 520;
 }
 
-.chip:hover{
-  border-color: rgba(56,189,248,0.45);
-  background: rgba(56,189,248,0.12);
-}
+.chip:hover { border-color: rgba(56,189,248,0.45); background: rgba(56,189,248,0.12); }
 
-/* =========================================================
-   Work experience blocks
-   ========================================================= */
-.role{
-  margin-bottom: 22px;
-}
+.role { margin-bottom: 22px; }
 
-.role-head{
+.role-head {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -227,173 +209,34 @@ li{ margin: 7px 0; }
   font-size: 14px;
 }
 
-.role-company{
-  margin: 0;
-  font-weight: 680;
+.role-company { margin: 0; font-weight: 680; }
+.role-dates { margin: 0; color: var(--muted); white-space: nowrap; }
+
+.edu-line { margin: 12px 0 0; font-size: 15px; color: rgba(230,237,243,0.92); }
+.edu-line strong { font-weight: 680; color: var(--text); }
+
+.cert-line { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+.cert-line strong { color: rgba(230,237,243,0.92); font-weight: 600; }
+
+.footer { margin-top: 42px; font-size: 12px; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; min-width: unset; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--line); padding: 32px 24px 28px; }
+  .content { padding: 32px 18px 64px; }
+  .section-banner h3 { font-size: 28px; }
+  .role-dates { white-space: normal; }
+  .chip { font-size: 14px; padding: 10px 14px; }
 }
 
-.role-dates{
-  margin: 0;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-/* =========================================================
-   Education (minimal)
-   ========================================================= */
-.edu-line{
-  margin: 12px 0 0;
-  font-size: 15px;
-  color: rgba(230,237,243,0.92);
-}
-
-.edu-line strong{
-  font-weight: 680;
-  color: var(--text);
-}
-
-/* =========================================================
-   Certifications (ultra-ATS minimal)
-   ========================================================= */
-.cert-line{
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.cert-line strong{
-  color: rgba(230,237,243,0.92);
-  font-weight: 600;
-}
-
-/* =========================================================
-   Footer
-   ========================================================= */
-.footer{
-  margin-top: 42px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* =========================================================
-   Responsive
-   ========================================================= */
-@media (max-width: 520px){
-  .page{ padding: 36px 16px 64px; }
-  h1{ font-size: 32px; }
-  h2{ font-size: 16px; }
-  .section-banner h3{ font-size: 28px; }
-  .role-dates{ white-space: normal; }
-  .chip{ font-size: 14px; padding: 10px 14px; }
-}
-
-/* =========================================================
-   Micro print view (Save as PDF)
-   ========================================================= */
-@media print{
-  :root{
-    --bg: #ffffff;
-    --text: #0b0f14;
-    --muted: #374151;
-    --line: #d1d5db;
-    --accent: #0ea5e9;
-    --accent-soft: #f3f4f6;
-    --accent-border: #d1d5db;
-    --pill-bg: #ffffff;
-    --pill-border: #d1d5db;
-  }
-
-  body{
-    background: #ffffff !important;
-    color: #0b0f14 !important;
-    letter-spacing: 0;
-  }
-
-  .page{
-    max-width: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  /* Keep content compact */
-  h1{ font-size: 26px; }
-  h2{ font-size: 14px; margin-bottom: 10px; }
-  .tagline{ font-size: 12px; margin-bottom: 10px; }
-  .meta{ font-size: 11px; margin-bottom: 10px; }
-
-  ul{ font-size: 12px; }
-  li{ margin: 5px 0; }
-
-  hr{ margin: 16px 0; border-top: 1px solid #d1d5db; }
-
-  .section-banner{
-    margin: 18px 0 10px;
-    border-radius: 10px;
-    background: #f3f4f6;
-    border: 1px solid #d1d5db;
-    padding: 12px 12px 12px 16px;
-  }
-
-  .section-banner::before{
-    background: #0ea5e9;
-    top: 8px;
-    bottom: 8px;
-    width: 4px;
-  }
-
-  .section-banner h3{
-    font-size: 16px;
-    font-weight: 750;
-  }
-
-  /* Avoid chip clutter in print • convert to plain text feel */
-  .chips{
-    gap: 8px;
-    margin-top: 10px;
-  }
-
-  .chip{
-    padding: 6px 10px;
-    font-size: 11px;
-    border: 1px solid #d1d5db;
-    background: #ffffff;
-    color: #0b0f14;
-  }
-
-  /* Buttons become simple links in print */
-  .actions{
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .btn{
-    padding: 0;
-    border: 0;
-    background: transparent;
-    transform: none !important;
-  }
-
-  .btn:hover{
-    transform: none !important;
-  }
-
-  .icon{
-    width: 14px;
-    height: 14px;
-  }
-
-  /* Ensure links show as text (print) */
-  a{
-    color: #0b0f14;
-    border-bottom: none;
-    text-decoration: underline;
-  }
-
-  /* Prevent awkward page breaks inside roles */
-  .role{
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* Hide footer year script effect is fine */
+@media print {
+  .sidebar { display: none; }
+  body { background: #ffffff !important; color: #0b0f14 !important; }
+  .content { max-width: none; padding: 0; margin: 0; }
+  h1 { font-size: 26px; }
+  .section-banner { background: #f3f4f6; border: 1px solid #d1d5db; padding: 12px 12px 12px 16px; }
+  .section-banner h3 { font-size: 16px; }
+  .chip { padding: 6px 10px; font-size: 11px; border: 1px solid #d1d5db; background: #ffffff; color: #0b0f14; }
+  a { color: #0b0f14; border-bottom: none; text-decoration: underline; }
+  .role { break-inside: avoid; }
 }
