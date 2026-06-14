@@ -124,7 +124,7 @@ body {
 
 .content {
   flex: 1;
-  padding: 48px 48px 72px;
+  padding: 48px 32px 72px;
 }
 
 h1 { margin: 0 0 6px; font-size: 44px; font-weight: 780; letter-spacing: 0.2px; }
@@ -144,15 +144,6 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 28px 0; }
   background: linear-gradient(90deg, var(--accent-soft), rgba(255,255,255,0.02));
   border: 1px solid var(--accent-border);
   margin: 34px 0 18px;
-}
-
-.section-banner::before {
-  content: "";
-  position: absolute;
-  left: 0; top: 14px; bottom: 14px;
-  width: 6px;
-  border-radius: 10px;
-  background: var(--accent);
 }
 
 .section-banner h3 { margin: 0; font-size: 38px; font-weight: 780; letter-spacing: 0.2px; }
